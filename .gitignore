@@ -1,0 +1,6 @@
+pkg/
+.DS_Store
+metadata.json
+spec/fixtures
+Gemfile.lock
+rspec.xml
