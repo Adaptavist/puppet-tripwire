@@ -19,7 +19,7 @@ class tripwire (
         require => Package[$package_name],
         notify  => [Exec['sign-config-file'], Exec['sign-policy-file']],
     }
-    
+
     # generate a local key
     exec {'generate-local-key':
         command => "twadmin --generate-keys --local-keyfile ${tripwire_dir}/${::fqdn}-local.key -P ${local_passphrase}",
@@ -62,7 +62,7 @@ class tripwire (
     } else {
         $augtool_email_action = 'rm GLOBALEMAIL'
     }
-   
+
     # depending on the 'augtool_email_action' variable either add/update or remove the GLOBALEMAIL value
     augeas { 'update_tripwire_email':
         lens    => 'Simplevars.lns',
