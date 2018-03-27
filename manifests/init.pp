@@ -51,8 +51,9 @@ class tripwire (
     # if a policy file source is specified use it to populate twpol.txt
     if ($tripwire_policy_file != false and $tripwire_policy_file != 'false') {
         file { "${tripwire_dir}/twpol.txt":
-            source => $tripwire_policy_file,
-            notify => Exec['sign-policy-file'],
+            source  => $tripwire_policy_file,
+            notify  => Exec['sign-policy-file'],
+            require => Package[$package_name],
         }
     }
 

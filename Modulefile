@@ -1,5 +1,5 @@
 name 'adaptavist-tripwire'
-version '0.0.1'
+version '0.0.2'
 source 'https://github.com/Adaptavist/puppet-tripwire.git'
 author 'mhope'
 summary 'tripwire Module' 
